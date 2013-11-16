@@ -1,7 +1,9 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-
+/// <summary>
+/// creates a 4x4x4 block that can serve as a Player.
+/// </summary>
 
 public class OCGetPlayer : MonoBehaviour
 {
@@ -19,7 +21,13 @@ public class OCGetPlayer : MonoBehaviour
     {
         Create(v.x, v.y, v.z);
     }
-
+    /// <summary>
+    /// gets the position info of the player from Minecraft and use it as its position for unity 3d;
+    /// </summary>
+    /// <param name="a">x global coordinate of the player</param>
+    /// <param name="b">y global coordinate of the player</param>
+    /// <param name="c">z global coordinate of the player</param>
+    /// <remarks>you can change the width value to change the size of the blocks</remarks>
    private static void Create(float a, float b, float c)
     {
         GameObject go = new GameObject();
