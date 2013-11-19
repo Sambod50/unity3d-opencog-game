@@ -14,7 +14,7 @@ public class OCPlayerEditor : EditorWindow
     }
 
     public Vector3 PlayerPosition;
-    GameObject playerName;
+    GameObject PlayerGameObject;
 
     /// <summary>
     /// finds player from Hierarchy with tag name Player
@@ -22,7 +22,7 @@ public class OCPlayerEditor : EditorWindow
     void OnEnable()
     {
         PlayerPosition = LoadPlayerFromMc.Position;
-        playerName = GameObject.FindWithTag("Player");
+        PlayerGameObject = GameObject.FindWithTag("Player");
 
 
     }
@@ -52,7 +52,7 @@ public class OCPlayerEditor : EditorWindow
             if (alive)
             {
                 PlayerPosition = lpfm.GetPlayerPositionFromMC(MapName);
-                playerName.transform.position = PlayerPosition;
+                PlayerGameObject.transform.position = PlayerPosition;
             }
             else
             {
@@ -64,7 +64,7 @@ public class OCPlayerEditor : EditorWindow
         if (GUI.Button(new Rect(10,100,150,20),"Create UPlayer"))
         {
             LoadPlayerFromMc lp = new LoadPlayerFromMc();
-            OCGetPlayer.Create(playerName.transform.position);
+            OCGetPlayer.Create(PlayerGameObject.transform.position);
 
         }
         
